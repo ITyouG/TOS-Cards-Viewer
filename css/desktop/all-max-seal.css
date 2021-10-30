@@ -1,0 +1,29 @@
+.all-max-seal .cards-container {
+    justify-content: center;
+}
+.all-max-seal .card-groups {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-groups .width5 {
+    width: 47.5%;
+}
+.card-groups .width4 {
+    width: 45%;
+}
+.card-groups .width3,
+.card-groups .width2,
+.card-groups .width1 {
+    width: 30%;
+}
+.card-groups .width1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+.card-groups .width1 h3 {
+    width: 100%;
+}

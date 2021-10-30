@@ -1,0 +1,109 @@
+.rel__mask {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background: #000;
+    transition: .3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+.rel__mask.show {
+    opacity: .6;
+    visibility: visible;
+}
+.rel__modal {
+    opacity: 0;
+    position: fixed;
+    bottom: -100%;
+    z-index: 11;
+    width: 100vw;
+    height: 60vh;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+	background: #c19756;
+    transition: .3s ease;
+}
+.rel__modal.show {
+    opacity: 1;
+    bottom: 0;
+}
+
+.rel__heading {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 3px 5px 0 #866432;
+}
+.rel__heading .title {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px 0;
+    color: white;
+    text-shadow: #ffc107 0px 0px 5px;
+}
+.rel__heading .btn-close {
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    width: 30px;
+    height: 30px;
+    transition: .5s ease;
+}
+.rel__heading .btn-close:before,
+.rel__heading .btn-close:after {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 1.5px);
+    display: block;
+    content: '';
+    width: 3px;
+    height: 30px;
+    background-color: white;
+}
+.rel__heading .btn-close:before {
+    transform: rotate(45deg);
+}
+.rel__heading .btn-close:after {
+    transform: rotate(-45deg);
+}
+.rel__heading .btn-close:active,
+.rel__heading .btn-close:focus {
+    transform: scale(.8);
+    outline: 0;
+}
+
+.rel__container {
+    padding: 15px 0;
+    overflow-y: auto;
+    height: calc(60vh - 70px);
+    background: #a87d3e;
+}
+
+.rel__row {
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.rel__row .user {
+    display: flex;
+    width: calc((100vw - 40px) / 2);
+    padding: 10px 0;
+    text-decoration: none;
+    color: white;
+}
+.rel__row .user .detail {
+    width: calc(100% - 60px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.detail .name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+}

@@ -1,0 +1,114 @@
+.rel__mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background: #000;
+    transition: .3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+.rel__mask.show {
+    opacity: .6;
+    visibility: visible;
+}
+
+.loading {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -90px;
+    margin-top: -76.125px;
+    width: 180px;
+    display: none;
+}
+.loading.show {
+    display: block;
+}
+
+#modal-camera {
+    position: fixed;
+    top: calc(50% - 40vh);
+    left: calc(50% - 40vw);
+    width: 80vw;
+    height: 80vh;
+    z-index: 20;
+    display: none;
+}
+#modal-camera.show {
+    display: block;
+}
+
+#modal-camera .reviewer-container {
+    height: 100%;
+    padding: 0;
+    display: flex;
+}
+
+#modal-camera .reviewer-container > div {
+    margin: 30px;
+}
+
+#modal-camera canvas,
+#modal-camera img {
+    width: 100%;
+    max-width: 960px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.modal-display {
+    width: 60%;
+    height: calc(100% - 60px);
+    overflow-y: scroll;
+}
+
+.modal-info {
+    color: white;
+}
+.modal-info span {
+    vertical-align: sub;
+    font-size: 2rem;
+    text-shadow: 0 0 5px #ffc107;
+}
+.modal-info button {
+    margin: 1em 0;
+}
+
+#modal-camera .btn-close {
+    padding: 5px;
+    position: absolute;
+    z-index: 20;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    transition: .5s ease;
+    background: #c19756;
+    border: 1px solid #c19756;
+    border-radius: 30px;
+}
+#modal-camera .btn-close:before,
+#modal-camera .btn-close:after {
+    position: absolute;
+    top: 5px;
+    left: calc(50% - 1.5px);
+    display: block;
+    content: '';
+    width: 3px;
+    height: 30px;
+    background-color: white;
+}
+#modal-camera .btn-close:before {
+    transform: rotate(45deg);
+}
+#modal-camera .btn-close:after {
+    transform: rotate(-45deg);
+}
+#modal-camera .btn-close:active,
+#modal-camera .btn-close:focus {
+    transform: scale(.8);
+    outline: 0;
+}

@@ -1,0 +1,258 @@
+html {
+    background-color: #000;
+}
+body {
+    margin: 0;
+    position: relative;
+    background: url(./../../images/tos/bg_pattern_1.jpg) 0% 0% / 100vw 100vh;
+    background-repeat: repeat;
+    background-size: 5%;
+}
+
+.user-container {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    height: calc(100vw / 5.2);
+    z-index: 1;
+}
+.user-container > * {
+    position: absolute;
+}
+.user-container img.frame {
+    top: 0;
+    height: calc(100vw / 5.2);
+}
+.user-container .monster {
+    left: 42%;
+    top: 2px;
+}
+.user-container .monster img {
+	width: calc(100vw / 6.56);
+    z-index: -1;
+    background-color: #000;
+}
+.user-container .name {
+    top: 15%;
+    left: 5%;
+}
+.user-container .uid {
+    top: 15%;
+    left: 65%;
+}
+.user-container .name,
+.user-container .uid {
+    min-width: 30%;
+    text-align: center;
+    color: #fff;
+    font-size: 2.75vw;
+    z-index: 1;
+}
+
+/*
+The -webkit-overflow-scrolling: touch gives us "momentum" style scrolling on iOS devices (where you can flick your finger and the item scolls past and bounces back again). I like to call it bouncy scrolling.
+refs: https://css-tricks.com/pure-css-horizontal-scrolling/
+refs: https://sampo.co.uk/blog/simple-horizontal-scrolling-menu-in-just-css
+*/
+.footer {
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    bottom: calc(-100vw + 36px);
+    left: calc(-25vw - 1px);
+    z-index: 10;
+    height: 100vw;
+    background: #c19756;
+    overflow-y: scroll;
+    transform: rotate(-90deg);
+    transform-origin: right top;
+}
+.footer .tab {
+    box-sizing: border-box;
+    width: 25vw;
+    height: 36px;
+    padding: 10px 0;
+    font-size: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    border: 1px solid #c19756; /* 加這行的原因是，切換 tab 時，頁面重繪有可能會造成元素有晃動的感覺 */
+    border-top: none;
+    border-bottom: none;
+    transform: rotate(90deg) translateX(25vw);
+    transform-origin: right top;
+    margin-bottom: calc(25vw - 36px);
+}
+.footer .tab.active {
+    background: #a87d3e;
+    border: 1px solid #a87d3e;
+    color: #fff;
+    text-shadow: #ffc107 0px 0px 5px;
+    border-top: none;
+    border-top: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.footer .tab:first-child {
+    border-top-left-radius: 0;
+}
+.footer .tab:last-child {
+    border-top-right-radius: 0;
+}
+
+.cards-container {
+    display: none;
+    padding: calc(100vw / 5.2) 0 15px;
+}
+.cards-container.active {
+    display: block;
+}
+.cards-container .slot {
+    padding: 0 10px;
+}
+.cards-container .slot:last-child {
+    padding-bottom: 50px;
+}
+a.monster-link {
+    position: relative;
+    height: 60px;
+}
+.cards-container a.monster-link.disable::before {
+    position: absolute;
+    top: 0;
+    background: #000;
+    opacity: .75;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+.cards-container.disable-reverse a.monster-link.disable::before {
+    display: none;
+}
+.cards-container.disable-reverse a.monster-link::before {
+    position: absolute;
+    top: 0;
+    background: #000;
+    opacity: .75;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+.monster-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: .6rem;
+}
+.refine-lv {
+    width: 18px;
+}
+.cd {
+    text-align: right;
+    padding-right: 5px;
+    color: #ffd600;
+    text-shadow: 1px 1px 1px #000;
+    font-weight: bold;
+
+    animation-name: Breath;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes Breath {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.level {
+    display: flex;
+    align-items: center;
+    height: 18px;
+    background: rgba(0,0,0,.5);
+}
+.level > div{
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    color: white;
+}
+.level.all-max > div,
+.level.dual-max > div {
+    text-shadow: none;
+    color: #ffc700;
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'arial';
+    white-space: nowrap;
+}
+
+.related-container {
+	margin: 30px auto 66px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    padding: 6px 12px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+    text-shadow: #ffc107 0px 0px 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: 0;
+    background-color: #c19756;
+}
+button#reverse-check {
+    position: fixed;
+    right: 0;
+    bottom: 60px;
+    z-index: 1;
+    width: 30px;
+    padding: 10px 0 10px 5px;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-default {
+    color: white;
+}
+.btn-default:active {
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+.btn-default:hover {
+    background-color: #a87d3e;
+}
+
+#loading_mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height:100vh;
+    z-index: 1000;
+    background-color: #000;
+    opacity: 1;
+    transition: opacity .5s linear;
+}
+.loading {
+    position: fixed;
+    left: calc(50vw - 200px);
+    top: calc(50vh - 200px);
+    width: 400px;
+    margin: 0;
+    display: none;
+}
+.loading.show {
+    display: block;
+}

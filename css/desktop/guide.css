@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: 'arial', monospace;
+}
+.topbar {
+    padding: 5px 0;
+    width: 100%;
+    background-color: #1a3c40;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+.warning {
+    font-size: .75rem;
+    max-width: 450px;
+    margin: auto;
+    color: #bbb;
+}
+.container {
+	padding: 0 15px;
+}
+h2 {
+    color: #1a3c40;
+    margin: 25px 0 0 0;
+}
+p {
+    line-height: 1.5;
+    margin: 5px 0 0 0;
+}
+p.social {
+    display: flex;
+    justify-content: space-around;
+}
+.highlight {
+    text-decoration: none;
+    color: #307672;
+}
+
+.uid-input-group {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+}
+.uid-input-group > label {
+	margin: 10px auto;
+    text-shadow: 0 0 5px #1a3c40;
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+}
+.uid-input-group > input#uid {
+	padding: 10px 15px;
+    width: 200px;
+    margin: 10px auto;
+    font-size: 1rem;
+	color: #ccc;
+    line-height: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.uid-input-group > input#uid:focus {
+	color: #1a3c40;
+	outline: 0;
+}
+.uid-input-group > input#uid::placeholder {
+	color: #ccc;
+}
+.uid-input-group > button {
+    width: 100px;
+    margin: 10px auto;
+    padding: 5px 0;
+    border: 1px solid #1a3c40;
+    border-radius: 3px;
+    font-size: 1rem;
+	color: #1a3c40;
+    background: #ddd;
+    transition: ease .2s;
+    outline: 0;
+}
+.uid-input-group > button:hover {
+    background: #ccc;
+}
+.uid-input-group > button:focus {
+    background: #bbb;
+}
+
+.footer {
+    background-color: #eee;
+}
+.footer > h2 {
+    padding: 5px 15px 0 15px;
+}
+.fa, .fab {
+    padding: 20px;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+}
+.fa-facebook-f {
+	background: #3B5998;
+	color: white;
+}
+.fa-facebook-messenger {
+    background: #0084ff;
+    color: white;
+}
+.fa-envelope {
+	background: #1a3c40;
+	color: white;
+}
+.fa-github {
+    background: #000;
+    color: white;
+}

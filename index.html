@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118267469-3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-118267469-3');
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      id="viewport"
+      name="viewport"
+      content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1.01, user-scalable=1"
+    />
+    <meta property="og:title" content="神魔之塔卡匣檢視器">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yuh926323.github.io/tos/index.html">
+    <link rel="shortcut icon" href="./images/tos/icon.ico">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css/desktop/guide.css"
+    />
+    <title>神魔之塔卡匣檢視器</title>
+  </head>
+  <body>
+    <div class="topbar">神魔之塔卡匣檢視器</div>
+    <div class="container">
+      <div class="uid-input-group">
+        <label for="uid">輸入你的UID</label>
+        <input id="uid" value="" />
+        <button onclick="guideToBag();">查詢</button>
+        <div class="warning">
+          注意：點選「查詢」後，為避免機器不斷的去健檢網站拿資料造成負荷，我會將該UID背包的資料存到我的網站上做暫存顯示的機制。如果對這個地方有使用上的疑慮，可能就還是麻煩先別使用比較好(
+          ´•̥̥̥ω•̥̥̥` )
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h2>這是什麼？</h2>
+      <p>
+        這是一個用來檢視神魔之塔背包的小工具，輸入你的 UID
+        之後，會從「神魔之塔健檢中心」取得你背包的資料，並檢查你擁有卡匣內的哪些卡片。
+      </p>
+      <h2>為什麼想做這個？</h2>
+      <p>
+        在官方推出黑金卡龐貝並開放古幣封印時，看到群組的朋友們在討論缺乏卡匣內的哪些卡片，當時是每個人在一張圖片上，手動的一張一張塗黑，一邊還要想自己是不是有漏掉哪些卡片，覺得這樣實在很麻煩。
+      </p>
+      <br />
+      <p>
+        問了很多老玩家，目前好像沒有一個可以讓人一目了然是否擁有卡匣中卡片的服務，剛好利用今年年初推出的「神魔之塔健檢中心」所提供的資料，用了大概一天的時間寫了這個「神魔之塔卡匣檢驗器」，並趕在古幣封印的最後一天發布。
+      </p>
+      <h2>我只有進化前/進化後/解放/異轉之後的卡片，會不會造成判斷錯誤？</h2>
+      <p>
+        你說你只有進化過的巴龍「因果破壞‧阿撒托斯」，進化前的「阿撒托斯」會不會被判斷未擁有？
+        別擔心，程式會很聰明的判斷是否有進化或退化的兄弟姊妹們，就連異空轉生、異力轉換都會一起判斷喔！
+      </p>
+      <h2>How to use</h2>
+      <ol>
+        <li>拜訪「神魔之塔健檢中心」網站</li>
+        <li>登入你的 UID &amp; 活動驗證碼</li>
+        <li>點擊「公開」讓網站可以取用你的神魔之塔背包資料</li>
+        <li>回到這個網站輸入你的UID，便可檢視卡匣內容</li>
+      </ol>
+      <h2>目前已知問題</h2>
+      <ol>
+        <li>
+          如果官方未將可以取得的卡片資訊加進健檢背包內，那麼這邊也不會有資料喔。例如在健檢背包內找不到金屬生命系列，那這邊也一定都會是顯示未擁有的狀態。
+        </li>
+        <li>
+          我明明有卡片，官方也有加到健檢背包內，但為什麼沒有顯示？請重新拜訪「神魔之塔健檢中心」網站，將分享背包卡片內容關閉，再重新打開，就可以更新背包內的資料，接著過
+          2 分鐘再回到這邊輸入你的編號，這樣就可以順利更新囉～
+        </li>
+      </ol>
+      <h2>聲明</h2>
+      <ol>
+        <li>
+          安裝這個套件不會竊取你的任何資料，你可以直接看程式碼是怎麼運作的。
+        </li>
+        <li>使用的圖示、資訊、版權皆歸 Madhead 神魔之塔擁有。</li>
+        <li>網站部分素材、升級資料等，皆取自「神魔之塔 繁中維基主頁」</li>
+      </ol>
+    </div>
+    <div class="footer">
+      <h2>與我聯繫</h2>
+      <p class="social">
+        <a
+          class="fab fa-facebook-f"
+          href="https://fb.me/yuh926"
+          target="_blank"
+          data-key="facebook"
+        ></a>
+        <a
+          class="fab fa-facebook-messenger"
+          href="https://m.me/yuh926"
+          target="_blank"
+          data-key="messenger"
+        ></a>
+        <a
+          class="fab fa-github"
+          href="https://github.com/yuh926323/toscard-reviewer"
+          target="_blank"
+          data-key="github"
+        ></a>
+        <a
+          class="fa fa-envelope"
+          href="mailto:yuh926323@gmail.com"
+          target="_blank"
+          data-key="email"
+        ></a>
+      </p>
+    </div>
+    <script src="./js/guide.js"></script>
+  </body>
+</html>

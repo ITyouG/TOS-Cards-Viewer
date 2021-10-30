@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118267469-3"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-118267469-3');
+        </script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta id="viewport" name="viewport" content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1.01, user-scalable=1">
+        <meta name="format-detection" content="telephone=no">
+        <meta property="og:title" content="神魔之塔卡匣檢視器">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://yuh926323.github.io/tos/mobile.html">
+        <link rel="shortcut icon" href="./images/tos/icon.ico">
+        <link rel="stylesheet" type="text/css" href="./css/mobile/main.css?v=1f42146c11f84ab3c00e4f34cca5c79b">
+        <link rel="stylesheet" type="text/css" href="./css/mobile/special-seal.css?v=1f42146c11f84ab3c00e4f34cca5c79b">
+        <link rel="stylesheet" type="text/css" href="./css/mobile/ultimate-lord-seal.css?v=1f42146c11f84ab3c00e4f34cca5c79b">
+        <link rel="stylesheet" type="text/css" href="./css/mobile/rel-animated.css?v=1f42146c11f84ab3c00e4f34cca5c79b">
+        <title>神魔之塔卡匣檢視器</title>
+    </head>
+    <body>
+    <div id="loading_mask">
+        <img class="loading show" src="./images/mobileloading.gif">
+    </div>
+    <button class="btn btn-default" id="reverse-check">反向檢視</button>
+    <div class="user-container">
+        <div class="name"></div>
+        <div class="monster"><img src="https://static.wikia.nocookie.net/tos/images/8/83/000i.png/revision/latest/scale-to-width-down/200?cb=20200414122554&path-prefix=zh" /></div>
+        <div class="uid">********</div>
+        <img class="frame" src="./images/tos/Header.png">
+    </div>
+    <div class="cards-container active" id="ancient-coin-seal"></div>
+    <div class="cards-container" id="magic-seal"></div>
+    <div class="cards-container" id="special-seal"></div>
+    <div class="cards-container" id="sphinx-seal"></div>
+    <div class="cards-container" id="ultimate-lord-seal"></div>
+    <div class="footer">
+        <div class="tab active" data-target="ancient-coin-seal">古幣封印</div>
+        <div class="tab" data-target="magic-seal">一般封印</div>
+        <div class="tab" data-target="special-seal">合作封印</div>
+        <div class="tab" data-target="sphinx-seal">斯芬克斯</div>
+        <div class="tab" data-target="ultimate-lord-seal">地獄魔王</div>
+    </div>
+    <script src="./js/main_data.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/cards.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/colddown.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/refines.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/evo_data.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/functions.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/mobile.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script>
+        let inventory_str;
+        const urlParams = new URLSearchParams(window.location.search);
+        const uid = urlParams.get('uid');
+
+        getInventoryData();
+        
+        async function updateTosToken()
+        {
+            try {
+                response = await axios.post('https://website-api.tosgame.com/api/checkup/login?token=&uid=52326271&auth=594611');
+
+                if (200 != response.status || !response.data) {
+                    throw 'get token fail';
+                }
+                
+                localStorage.setItem('tos_token', response.data.token);
+            } catch (error) {
+                location.href = 'https://yuh926323.github.io/tos/index.html';
+                return false;
+            }
+        }        
+
+        async function getInventoryData()
+        {
+            axios.get('https://website-api.tosgame.com/api/checkup/getUserProfile?targetUid=' + uid + '&token=' + localStorage.getItem('tos_token'))
+            .then(async (response) => {
+                inventory_str = JSON.stringify(response.data.userData.cards);
+
+                document.querySelector('.uid').innerText = response.data.userData._id;
+                document.querySelector('.name').innerText = response.data.userData.displayName;
+
+                const reviewer = new CardReviewer();
+            }).catch(async (error) => {
+
+                if (401 == error.response.status) {
+                    await updateTosToken();
+
+                    location.reload();
+                    return false;
+                }
+
+                location.href = 'https://yuh926323.github.io/tos/index.html';
+                return false;
+            });
+        }
+    </script>
+    </body>
+</html>

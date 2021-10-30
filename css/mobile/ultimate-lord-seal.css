@@ -1,0 +1,34 @@
+.sealed {
+    margin: 30px auto 0;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.ultimate-lord-seal .cards-container {
+    display: flex;
+    width: 400px;
+    margin: 30px auto 0;
+}
+.ultimate-lord-seal .cards-container.horizontal {
+    flex-direction: column;
+}
+.ultimate-lord-seal .attr {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.attr .zero-card {
+    display: none;
+}
+.horizontal .attr {
+    flex-direction: row;
+}
+.horizontal .attr .zero-card {
+    display: inherit;
+}

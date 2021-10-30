@@ -1,0 +1,38 @@
+.ancient-coin-seal .cards-container {
+    justify-content: center;
+}
+
+.ancient-coin-seal .cards .part,
+.ancient-coin-seal .cards .part > * {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: baseline;
+}
+.ancient-coin-seal .cards .part.part-1,
+.ancient-coin-seal .cards .part.part-3,
+.ancient-coin-seal .cards .part.part-5 {
+    width: 400px;
+    margin: 0 auto 30px;
+}
+.ancient-coin-seal .cards .part.part-2,
+.ancient-coin-seal .cards .part.part-4 {
+    margin: 0 auto 30px;
+}
+.ancient-coin-seal .cards .top-left,
+.ancient-coin-seal .cards .top-medium,
+.ancient-coin-seal .cards .top-right {
+    width: 240px;
+    margin: 0 15px;
+}
+
+.ancient-coin-seal .special-title {
+    width:100%;
+    margin: 0;
+}
+.ancient-coin-seal .special-subtitle{
+    width:100%;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
