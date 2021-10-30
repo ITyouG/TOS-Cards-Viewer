@@ -40,10 +40,10 @@ function guideToBag(uid = 0) {
         'event_label' : `${uid}`,
     });
     if (mobileCheck()) {
-        location.href = location.href.replace('/index.html', '') + `/mobile.html?uid=${uid}`;
+        location.href = location.href.replace('index.html', '') + `mobile.html?uid=${uid}`;
          `/mobile.html?uid=${uid}`;
     } else {
-        location.href = location.href.replace('/index.html', '') + `/desktop.html?uid=${uid}`;
+        location.href = location.href.replace('index.html', '') + `desktop.html?uid=${uid}`;
     }
 }
 
