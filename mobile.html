@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="zh-TW">
     <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118267469-3"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics (TOS-Cards-Viewer)-->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-F311HYDTNM"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-118267469-3');
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-F311HYDTNM');
         </script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +16,7 @@
         <meta name="format-detection" content="telephone=no">
         <meta property="og:title" content="神魔之塔卡匣檢視器">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://yuh926323.github.io/tos/mobile.html">
+        <meta property="og:url" content="https://ityoug.github.io/TOS-Cards-Viewer/mobile.html">
         <link rel="shortcut icon" href="./images/tos/icon.ico">
         <link rel="stylesheet" type="text/css" href="./css/mobile/main.css?v=1f42146c11f84ab3c00e4f34cca5c79b">
         <link rel="stylesheet" type="text/css" href="./css/mobile/special-seal.css?v=1f42146c11f84ab3c00e4f34cca5c79b">
@@ -72,7 +73,7 @@
                 
                 localStorage.setItem('tos_token', response.data.token);
             } catch (error) {
-                location.href = 'https://yuh926323.github.io/tos/';
+                location.href = 'https://ityoug.github.io/TOS-Cards-Viewer/';
                 return false;
             }
         }        
@@ -96,7 +97,7 @@
                     return false;
                 }
 
-                location.href = 'https://yuh926323.github.io/tos/';
+                location.href = 'https://ityoug.github.io/TOS-Cards-Viewer/';
                 return false;
             });
         }

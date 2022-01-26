@@ -1,20 +1,21 @@
 <!doctype html>
 <html lang="zh-TW">
     <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118267469-3"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics (TOS-Cards-Viewer)-->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-F311HYDTNM"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-118267469-3');
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-F311HYDTNM');
         </script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta id="viewport" name="viewport" content="width=1600, minimal-ui, initial-scale=1.0, maximum-scale=1.01, user-scalable=1">
         <meta property="og:title" content="神魔之塔卡匣檢視器">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://yuh926323.github.io/tos/desktop.html">
+        <meta property="og:url" content="https://ityoug.github.io/TOS-Cards-Viewer/desktop.html">
         <link rel="shortcut icon" href="./images/tos/icon.ico">
         <link rel="stylesheet" type="text/css" href="./css/desktop/main.css?v=1f42146c11f84ab3c00e4f34cca5c79b">
         <link rel="stylesheet" type="text/css" href="./css/desktop/camera-modal.css?v=1f42146c11f84ab3c00e4f34cca5c79b">
@@ -55,15 +56,18 @@
         </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-alpha1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
-    <script src="./js/main_data.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
-    <script src="./js/cards.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
-    <script src="./js/colddown.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
-    <script src="./js/refines.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
-    <script src="./js/levels.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
-    <script src="./js/evo_data.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    
+    <script src="./js/resource/main_data.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/resource/cards.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/resource/colddown.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/resource/refines.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/resource/levels.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+    <script src="./js/resource/evo_data.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
+
     <script src="./js/functions.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
     <script src="./js/desktop.js?v=1f42146c11f84ab3c00e4f34cca5c79b"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    
     <script>
         let inventory_str;
         const urlParams = new URLSearchParams(window.location.search);
@@ -82,7 +86,7 @@
                 
                 localStorage.setItem('tos_token', response.data.token);
             } catch (error) {
-                location.href = 'https://yuh926323.github.io/tos/';
+                location.href = '../TOS-Cards-Viewer/index.html';
                 return false;
             }
         }        
@@ -103,7 +107,7 @@
                     return false;
                 }
 
-                location.href = 'https://yuh926323.github.io/tos/';
+                location.href = '../TOS-Cards-Viewer/index.html';
                 return false;
             });
         }
